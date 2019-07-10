@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Display Choice{% endblock %}
+
+{% block body %}
+    <ul>
+        <li><a href="{{ path('product_index') }}">show all products</a></li>
+        {% for categories in category %}
+        <li><a href="{{ path('product_category', { 'id' : categories.id }) }}">show products of {{ categories.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
